@@ -14,7 +14,7 @@ const routes: Routes = [
     CommonModule,
     FirebaseUIModule.forFeature({
       signInOptions: [
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID]
+        firebase.default.auth.GoogleAuthProvider.PROVIDER_ID]
     }),
     RouterModule.forChild(routes)
   ],

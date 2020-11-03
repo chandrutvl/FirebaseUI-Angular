@@ -12,7 +12,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
   signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.default.auth.GoogleAuthProvider.PROVIDER_ID,
     {
       scopes: [
         'public_profile',
@@ -23,15 +23,15 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
       customParameters: {
         'auth_type': 'reauthenticate'
       },
-      provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID
+      provider: firebase.default.auth.FacebookAuthProvider.PROVIDER_ID
     },
-    firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-    firebase.auth.GithubAuthProvider.PROVIDER_ID,
+    firebase.default.auth.TwitterAuthProvider.PROVIDER_ID,
+    firebase.default.auth.GithubAuthProvider.PROVIDER_ID,
     {
       requireDisplayName: false,
-      provider: firebase.auth.EmailAuthProvider.PROVIDER_ID
+      provider: firebase.default.auth.EmailAuthProvider.PROVIDER_ID
     },
-    firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+    firebase.default.auth.PhoneAuthProvider.PROVIDER_ID,
     firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
   ],
   tosUrl: '<your-tos-link>',

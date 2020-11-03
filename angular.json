@@ -189,5 +189,8 @@
       }
     }
   },
-  "defaultProject": "firebaseui-angular"
+  "defaultProject": "firebaseui-angular",
+  "cli": {
+    "analytics": false
+  }
 }

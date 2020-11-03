@@ -7,10 +7,10 @@ import {
   NativeFirebaseUIAuthConfig,
 } from './firebaseui-angular-library.helper';
 import * as firebaseui from 'firebaseui';
-import {User} from 'firebase/app';
+// import {User} from 'firebase/app';
 import {FirebaseuiAngularLibraryService} from './firebaseui-angular-library.service';
 import 'firebase/auth';
-import UserCredential = firebase.auth.UserCredential;
+// import UserCredential = firebase.auth.UserCredential;
 
 @Component({
   selector: 'firebase-ui',
@@ -40,7 +40,7 @@ export class FirebaseuiAngularLibraryComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.subscription = this.angularFireAuth.authState.subscribe((value: User) => {
+    this.subscription = this.angularFireAuth.authState.subscribe((value: firebase.default.User) => {
       if ((value && value.isAnonymous) || !value) {
         if (this.firebaseUiConfig.signInOptions.length !== 0) {
           this.firebaseUIPopup();
@@ -86,7 +86,7 @@ export class FirebaseuiAngularLibraryComponent implements OnInit, OnDestroy {
   }
 
   private getCallbacks(): any { // firebaseui.Callbacks
-    const signInSuccessWithAuthResultCallback = (authResult: UserCredential, redirectUrl) => {
+    const signInSuccessWithAuthResultCallback = (authResult: firebase.default.auth.UserCredential, redirectUrl) => {
       this.ngZone.run(() => {
         this.signInSuccessWithAuthResultCallback.emit({
           authResult,
